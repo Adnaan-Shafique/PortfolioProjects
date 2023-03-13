@@ -2,9 +2,7 @@ SELECT *
 FROM PortfolioProject..CovidDeaths
 ORDER BY 3,4;
 
---SELECT *
---FROM PortfolioProject..CovidVaccinations
---ORDER BY 3,4;
+----------------------------------------------------------------------------------------------
 
 -- Select data that we are going to be using (NA)
 
@@ -12,12 +10,17 @@ SELECT location, date, total_cases, new_cases, total_deaths, population
 FROM PortfolioProject..CovidDeaths
 ORDER BY 1,2;
 
+----------------------------------------------------------------------------------------------
+
 -- Looking at the total cases vs total deaths 
 -- Shows likelihood of dying if you contract COVID in your country
+
 SELECT location, date, total_cases,total_deaths, (total_deaths/total_cases)*100 AS DeathPercentage
 FROM PortfolioProject..CovidDeaths
 WHERE location LIKE '%India%'
 ORDER BY 1,2;
+
+----------------------------------------------------------------------------------------------
 
 -- Looking at the total cases vs the population
 -- Shows what percentage of population got COVID
@@ -27,6 +30,7 @@ FROM PortfolioProject..CovidDeaths
 WHERE location LIKE '%India%'
 ORDER BY 1,2;
 
+----------------------------------------------------------------------------------------------
 
 -- Looking at countries with highest infection rate compared to population
 
@@ -35,6 +39,8 @@ FROM PortfolioProject..CovidDeaths
 -- WHERE location LIKE '%India%'
 GROUP BY Location, population
 ORDER BY PercentPopulationInfected DESC;
+
+----------------------------------------------------------------------------------------------
 
 -- Showing the countries with the highest death count per population
 
@@ -45,19 +51,19 @@ WHERE continent IS NOT NULL -- To remove the redundant data of the continents
 GROUP BY Location
 ORDER BY TotalDeathCount DESC;
 
+----------------------------------------------------------------------------------------------
 
 -- CONTINENT-WISE BREAKDOWN
-
 
 -- Showing the continents with the highest death count per population
 
 SELECT continent, MAX(CAST(total_deaths AS INT)) AS TotalDeathCount
 FROM PortfolioProject..CovidDeaths
--- WHERE location LIKE '%India%'
 WHERE continent IS NOT NULL 
 GROUP BY continent
 ORDER BY TotalDeathCount DESC;
 
+----------------------------------------------------------------------------------------------
 
 -- GLOBAL NUMBERS
 
@@ -66,6 +72,8 @@ FROM PortfolioProject..CovidDeaths
 WHERE continent IS NOT NULL
 GROUP BY date
 ORDER BY 1,2;
+
+----------------------------------------------------------------------------------------------
 
 -- Looking at Total Population Vs Vaccinations
 
@@ -78,7 +86,7 @@ JOIN PortfolioProject..CovidVaccinations Vac
 WHERE Dea.continent IS NOT NULL
 ORDER BY 2,3;
 
-
+----------------------------------------------------------------------------------------------
 
 -- USE CTE
 
@@ -97,7 +105,7 @@ WHERE Dea.continent IS NOT NULL
 SELECT *, (RollingPeopleVaccinated/Population)*100
 FROM PopvsVac
 
-
+----------------------------------------------------------------------------------------------
 
 
 -- TEMP TABLE
@@ -125,7 +133,7 @@ WHERE Dea.continent IS NOT NULL
 SELECT *, (RollingPeopleVaccinated/Population)*100
 FROM #PercentPopulationVaccinated
 
-
+----------------------------------------------------------------------------------------------
 
 
 -- Creating View to store data for later visualisations
@@ -144,3 +152,5 @@ WHERE Dea.continent IS NOT NULL
 
 SELECT *
 FROM PercentPopulationVaccinated;
+
+----------------------------------------------------------------------------------------------
