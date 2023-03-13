@@ -1,19 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-# BMI = weight(kg)/height(m)^2
-
-
-# In[7]:
 
 
 name = input("Enter your name: ")
@@ -43,54 +27,3 @@ if BMI > 0:
         print(name + ", you are morbidly obese.")
     else:
         print("Enter valid inputs.")
-
-
-# In[ ]:
-
-
-if BMI > 0:
-    if BMI < 18.5:
-        print(name + ", you are underweight.")
-    elif BMI <= 24.5:
-        print(name + ", you are normal weight.")
-    elif BMI < 29.9:
-        print(name + ", you are overweight.")
-    elif BMI < 34.9:
-        print(name + ", you are obese.")
-    elif BMI < 39.9:
-        print(name + ", you are severly obese.")
-    elif BMI >= 39.9:
-        print(name + ", you are morbidly obese.")
-    else:
-        print("Enter valid inputs.")
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
