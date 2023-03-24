@@ -1,4 +1,4 @@
-# PorfolioProjects
+# PortfolioProjects
 
 Welcome!
 
