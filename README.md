@@ -1,5 +1,21 @@
-# PortfolioProjects
+# 🧠 Portfolio Projects
 
-Welcome!
+Welcome to my portfolio of data and machine learning projects! This repository contains hands-on projects covering:
 
-This is a place where I store all of my projects for SQL, Excel, Python, Tableau etc.
+- 📊 Data Analysis
+- 🤖 Machine Learning
+- 🧠 Deep Learning
+- 📈 Visualization
+- 🗂️ Excel Automation
+
+Each folder contains a standalone project with:
+- Description
+- Dataset(s)
+- Source code
+- Results / insights
+
+Feel free to explore and reach out if you have any questions or feedback!
+
+---
+📧 Contact: adnaan.shafique1@gmail.com  
+🔗 LinkedIn: https://linkedin.com/in/adnaan-shafique  
